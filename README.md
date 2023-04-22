@@ -8,6 +8,7 @@
 - Write output to stdout, the standard output stream.
 - `format` is a character string. The format string is composed of zero or more directives. 
 See `man 3 printf` for more details
+.
 
 ### File Usage
 
