@@ -6,3 +6,5 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+int _putschr(char z);
+#endif
