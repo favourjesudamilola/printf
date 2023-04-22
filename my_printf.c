@@ -1,32 +1,38 @@
 #include "main.h"
-<<<<<<< HEAD
-int _printf(const char *format, ...)
-{
-=======
 
 /**
  * my_printf - function that replicates what printf does
  * @format: a character string
  *
- * Return:  the number of characters printed
+ * Return: the number of characters printed
  */
+
 int my_printf(const char *format, ...)
 {
 	int count = 0;
 
-	fargs[] {
+	print_type fargs[] = {
 		{"c", _char},
 		{"s", _string},
-		{"%", _percent};
+		{"%", _percent},
+		{"d", _int},
+		{"i", _int},
+		{"r", _reverse},
+		{"R", _rot13},
+		{"b", _binary},
+		{"u", _unsigned},
+		{"o", _octal},
+		{"x", _hex_1},
+		{"X", _hex_u},
+		{"p", _address},
+		{NULL, NULL}};
 	va_list ap;
 
 	if (!format)
 		return (-1);
 
-	va_start(ap, format);
-	count = get_func(format, fargs, ap);
+	va_star(ap, format);
+	count = get_fun(format, fargs, ap);
 	va_end(ap);
-	}
 	return (count);
->>>>>>> e6583a732bc1e81639da4e83dacf8a27b0fce680
 }

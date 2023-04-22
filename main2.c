@@ -11,11 +11,11 @@ int main(void)
       
 
 	//using putcahar
-	_putschr(name[3]);
-	_putschr("\n");
+	_putstring(name[3]);
+	_putstring("\n");
 
 
 
-        return(0);
+        return (0);
 }
 
