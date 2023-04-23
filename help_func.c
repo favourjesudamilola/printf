@@ -1,5 +1,4 @@
-#includle "main.h"
-
+#include "main.h"
 /**
  * convert - function that converts our int to hex, octal, or binary
  * @num: the number passed into the function
@@ -7,15 +6,14 @@
  *
  * Return: the convertednumber of a certain base
  */
-
-int *convert(unsigned int num, int base)
+char *convert(unsigned int num, int base)
 {
-	const char Representation[] = ""0123456789ABCDEF";
+	const char Representation[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
 
 	ptr = &buffer[49];
-	*ptr = "\0";
+	*ptr = '\0';
 
 	while (num != 0)
 	{
@@ -23,13 +21,16 @@ int *convert(unsigned int num, int base)
 		num /= base;
 	}
 
+	return (ptr);
+}
+
 	/**
 	 * _string - function that prints a string
 	 * @ap: the string
 	 *
 	 * Return: 1
 	 */
-	int _string(va_list ap)
+	int _print_string(va_list ap)
 	{
 		int i = 0;
 		char *s;
@@ -48,11 +49,11 @@ int *convert(unsigned int num, int base)
 	 *
 	 * Return: Number of digits
 	 */
-	int _int(va_list ap)
+	int _print_int(va_list ap)
 	{
 		int i;
 		int count = 0;
-		int n = va_arg(ap. int);
+		int n = va_arg(ap, int);
 
 		if (n < 0)
 		{
@@ -82,7 +83,7 @@ int *convert(unsigned int num, int base)
 	 * Return: Number of digits
 	 */
 
-	int _unsigned(va_list ap)
+	int __print_unsigned(va_list ap)
 	{
 		int i;
 		int count = 0;
@@ -90,7 +91,7 @@ int *convert(unsigned int num, int base)
 		unsigned int n;
 
 		n = mint;
-		for (i 1000000000; i > 0; i /= 10)
+		for (i = 1000000000; i > 0; i /= 10)
 		{
 			if (n / i)
 			{
@@ -99,8 +100,32 @@ int *convert(unsigned int num, int base)
 			}
 			else if (n / i == 0 && i == 1)
 			{
-				count + =_putstring(n / i % 10 + '0');
+				count += _putstring(n / i % 10 + '0');
 			}
+		}
+		return (count);
+	}
+
+	/**
+	 * _octal - Prints an octal number
+	 * @ap: Action pointer
+	 *
+	 * Return: Number of digits
+	 */
+
+	int _print_octal(va_list ap)
+	{
+		int i;
+		unsigned int n;
+		char *s;
+		int count = 0;
+
+		n = va_arg(ap, unsigned int);
+		s = convert(n, 8);
+
+		for (i = 0; s[i]; i++)
+		{
+			count += _putstring(s[i]);
 		}
 		return (count);
 	}

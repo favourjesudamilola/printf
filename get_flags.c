@@ -1,4 +1,4 @@
-#include "main_h"
+#include "main.h"
 
 /**
  * get_flags - Matches specifier and returns count

@@ -2,12 +2,12 @@
 
 /**
  * _putstring - writes the char c to stdout
- * @c: char to print
- *
+ * @c: The character to print
  * Return: On success 1.
+ * On error, -1 is returned, and error is set appropriately.
  */
 
-int _putstring(char m)
+int _putstring(char c)
 {
-	return (write(1, &m, 1));
+	return (write(1, &c, 1));
 }
