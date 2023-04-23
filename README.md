@@ -127,4 +127,4 @@ All files were created and compiled on `Ubuntu 22.04 LTS` using `GCC 11.2.0`
 
 ## Collaborative Authors
 
-### 18 [Emmanuel Fasogba](Github: https://github.com/Emmyglobal)(Twitter: nwaforugochukw) & 19 [Ayodele Jesudamilola](github: https://github.com/favourjesudamilola)(Twitter:favourjesudami1)
+### 18 [Nwafor U. Emmanuel](Github: https://github.com/Emmyglobal)(Twitter:nwaforugochukw) & 19 [Ayodele Jesudamilola](github: https://github.com/favourjesudamilola)(Twitter:favourjesudami1)
