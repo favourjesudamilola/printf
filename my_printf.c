@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- * my_printf - function that replicates what printf does
+ * _printf - function that replicates what printf does
  * @format: a character string
  *
- * Return: the number of characters printed
+ * Return:  the number of characters printed
  */
-
 int my_printf(const char *format, ...)
 {
 	print_type argument[] = {
-		{"m", _print_char},
+		{"c", _print_char},
 		{"s", _print_string},
 		{"%", _print_percent},
 		{"d", _print_int},
@@ -20,9 +19,8 @@ int my_printf(const char *format, ...)
 		{"b", _print_binary},
 		{"u", _print_unsigned},
 		{"o", _print_octal},
-		{"x", _print_hex_1},
+		{"x", _print_hex_l},
 		{"X", _print_hex_u},
-		{"p", _print_address},
 		{NULL, NULL}};
 	va_list ap;
 	int count = 0;
