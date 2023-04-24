@@ -2,23 +2,38 @@
 #define MAIN_H
 
 #include <stdarg.h>
-
-int my_printf(const char *format, ...);
-int ret_char(va_list arg);
-int ret_str(va_list arg);
-int _putstring(char c);
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdint.h>
 
 /**
- * struct TypeStruct - The structure of our own defined type
- * @t: Type to use
- * @out: Function to handle returns
+ * struct print - print
+ * @parameter: The operator
+ * @f: The function associated
  */
-
-typedef struct TypeStruct
+typedef struct printType
 {
-        char *t;
+	char *parameter;
+	int (*f)(va_list ap);
+} print_type;
 
-        int (*out)(va_list);
-} TypeStruct;
+int _printf(const char *format, ...);
+int _string(va_list ap);
+int _putstring(char c);
+int _char(va_list ap);
+int _percent(va_list ap __attribute__((unused)));
+char *convert(unsigned int num, int base);
+int _rot13(va_list ap);
+int _reverse(va_list ap);
+int _int(va_list ap);
+int _unsigned(va_list ap);
+int _octal(va_list ap);
+int _hex_u(va_list ap);
+int _binary(va_list ap);
+int _hex_l(va_list ap);
+int get_func(const char *format, print_type argument[], va_list ap);
+int _address(va_list ap);
 
-#endif
+#endif /* _MAIN_H_ */

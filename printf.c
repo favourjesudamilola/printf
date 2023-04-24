@@ -6,7 +6,7 @@
  * @format - character format
  * Return - number of characters
  */
-int my_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
        	count = 0;
 	char c = 'A';
@@ -34,10 +34,11 @@ int my_printf(const char *format, ...)
                                 count += 2;
                                 break;
                }
-	} else {
-		putchar(*format);
-		count++;
-	}
+		else 
+		{
+			putchar(*format);
+			count++;
+		}
 
 	printf("Total characters printed: %d\n", count);
 	va_end(args);
