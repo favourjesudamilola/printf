@@ -17,9 +17,9 @@ int _binary(va_list ap)
 	s = convert(n, 2);
 
 	if (!n)
-		count += _putstring('0');
+		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
-		count += _putstring(s[i]);
+		count += _putchar(s[i]);
 	return (count);
 }
 
@@ -41,9 +41,9 @@ int _hex_u(va_list ap)
 	s = convert(n, 16);
 
 	if (!n)
-		count += _putstring('0');
+		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
-		count += _putstring(s[i]);
+		count += _putchar(s[i]);
 	return (count);
 }
 
@@ -64,13 +64,13 @@ int _hex_l(va_list ap)
 	s = convert(n, 16);
 
 	if (!n)
-		count += _putstring('0');
+		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
 	{
 		if (s[i] >= 'A' && s[i] <= 'F')
-			count += _putstring(s[i] + ' ');
+			count += _putchar(s[i] + ' ');
 		else
-			count += _putstring(s[i]);
+			count += _putchar(s[i]);
 	}
 	return (count);
 }
@@ -96,13 +96,13 @@ int _address(va_list ap)
 	*--s = '0';
 
 	if (!n)
-		count += _putstring('0');
+		count += _putchar('0');
 	for (i = 0; s[i] && n; i++)
 	{
 		if (s[i] >= 'A' && s[i] <= 'F')
-			count += _putstring(s[i] + ' ');
+			count += _putchar(s[i] + ' ');
 		else
-			count += _putstring(s[i]);
+			count += _putchar(s[i]);
 	}
 	return (count);
 }

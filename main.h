@@ -21,7 +21,7 @@ typedef struct printType
 
 int _printf(const char *format, ...);
 int _string(va_list ap);
-int _putstring(char c);
+int _putchar(char c);
 int _char(va_list ap);
 int _percent(va_list ap __attribute__((unused)));
 char *convert(unsigned int num, int base);

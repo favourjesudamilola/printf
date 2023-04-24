@@ -1,12 +1,23 @@
 #include "main.h"
 /**
- * _char - writes the character m to stdout
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
+ * _char - writes the character c to stdout
  * @ap: The character to print
  * Return: 1
  */
 int _char(va_list ap)
 {
-	_putstring(va_arg(ap, int));
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 
@@ -18,7 +29,7 @@ int _char(va_list ap)
  */
 int _percent(va_list ap __attribute__((unused)))
 {
-	_putstring('%');
+	_putchar('%');
 	return (1);
 }
 
@@ -41,7 +52,7 @@ int _reverse(va_list ap)
 		++len;
 	i = len - 1;
 	while (i >= 0)
-		_putstring(s[i--]);
+		_putchar(s[i--]);
 	return (len);
 }
 
@@ -67,12 +78,12 @@ int _rot13(va_list ap)
 		{
 			if (alphabet[j] == s[i])
 			{
-				_putstring(rAlphbet[j]);
+				_putchar(rAlphbet[j]);
 				break;
 			}
 		}
 		if (!alphabet[j])
-			_putstring(s[i]);
+			_putchar(s[i]);
 	}
 	return (i);
 }

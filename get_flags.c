@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- * get_flags - Matches specifier and returns count
- * @format : a character string
+ * get_func - Matches specifier and returns count
+ * @format: a character string
  * @argument: Specifiers being checked against
- * @ap: the number of characters printed
+ * @ap: Action pointer
  *
- * Return: the number of characters printed
+ * Return:  the number of characters printed
  */
-
-int get_flags(const char *format, print_type argument[], va_list ap)
+int get_func(const char *format, print_type argument[], va_list ap)
 {
 	int i, j;
 	int count = 0;
@@ -20,7 +19,7 @@ int get_flags(const char *format, print_type argument[], va_list ap)
 	{
 		if (format[i] != '%')
 		{
-			count += _putstring(format[i]);
+			count += _putchar(format[i]);
 			continue;
 		}
 		for (j = 0; argument[j].parameter; j++)
@@ -34,8 +33,8 @@ int get_flags(const char *format, print_type argument[], va_list ap)
 		i++;
 		if (!argument[j].parameter)
 		{
-			count += _putstring('%');
-			count += _putstring(format[i]);
+			count += _putchar('%');
+			count += _putchar(format[i]);
 		}
 	}
 	return (count);
