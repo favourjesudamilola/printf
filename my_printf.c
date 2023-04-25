@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format);
-	count = get_func(format, fargs, ap);
+	count = get_fun(format, fargs, ap);
 	va_end(ap);
 	return (count);
 }
