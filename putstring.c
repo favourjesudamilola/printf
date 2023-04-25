@@ -7,7 +7,7 @@
  * On error, -1 is returned, and error is set appropriately.
  */
 
-int _putstring(char c)
+int _putstring(char z)
 {
-        return (write(1, &c, 1));
+        return (write(1, &z, 1));
 }
